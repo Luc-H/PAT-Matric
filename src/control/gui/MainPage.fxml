@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="965.0" styleClass="background" stylesheets="@../Dark.css" SplitPane.resizableWithParent="false" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.gui.MainPageController">
+   <children>
+      <SplitPane dividerPositions="0.465625" layoutX="-7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="985.0" styleClass="background" stylesheets="@../Dark.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane prefHeight="719.0" prefWidth="737.0" styleClass="background" stylesheets="@../Dark.css">
+               <children>
+                  <HBox layoutX="15.0" layoutY="14.0" maxWidth="600.0" minHeight="56.0" minWidth="600.0" prefHeight="56.0" prefWidth="600.0" styleClass="filler" stylesheets="@../Dark.css" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="14.0">
+                     <children>
+                        <Button fx:id="btnSwitch" minWidth="190.0" mnemonicParsing="false" onAction="#handleBtnSwitch" text="Developers">
+                           <HBox.margin>
+                              <Insets bottom="15.0" left="5.0" right="5.0" top="15.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnRepopulateDB" alignment="CENTER_RIGHT" minWidth="190.0" mnemonicParsing="false" onAction="#handleBtnRepopulateDB" prefHeight="33.0" prefWidth="185.0" text="Repopulate Database">
+                           <HBox.margin>
+                              <Insets bottom="15.0" left="202.0" right="5.0" top="15.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="gameTable" layoutX="10.0" layoutY="88.0" prefHeight="617.0" prefWidth="610.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                    <columns>
+                      <TableColumn fx:id="steamIDColumn" editable="false" prefWidth="111.0" text="SteamID" />
+                      <TableColumn fx:id="titleColumn" editable="false" prefWidth="289.0" text="Title" />
+                        <TableColumn fx:id="metaCriticScoreColumn" editable="false" prefWidth="200.0" text="MetaCritic Score" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="developerTable" layoutX="20.0" layoutY="98.0" prefHeight="617.0" prefWidth="610.0" visible="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                     <columns>
+                        <TableColumn fx:id="developerNameColumn" editable="false" prefWidth="200.0" text="Name" />
+                        <TableColumn fx:id="foundedColumn" editable="false" prefWidth="200.0" text="Founded" />
+                        <TableColumn fx:id="hqCountryColumn" editable="false" prefWidth="200.0" text="HQ Country" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane styleClass="background" stylesheets="@../Dark.css" SplitPane.resizableWithParent="false">
+               <children>
+                  <ImageView fx:id="imgCoverArt" fitHeight="151.0" fitWidth="324.0" layoutX="12.0" layoutY="14.0" pickOnBounds="true" smooth="false" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="14.0" />
+                  <VBox fx:id="gameSideBarPanel" layoutX="12.0" layoutY="184.0" prefHeight="417.0" prefWidth="324.0" styleClass="background" stylesheets="@../Dark.css" AnchorPane.leftAnchor="12.0">
+                     <children>
+                        <Label text="Title">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="titleSideBar" styleClass="label-bright" text="Label" wrapText="true">
+                           <VBox.margin>
+                              <Insets left="20.0" right="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label text="Short Description">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="shortDescriptionSideBar" styleClass="label-bright" text="Label" wrapText="true">
+                           <VBox.margin>
+                              <Insets left="20.0" right="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label text="Developer">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="developerSideBar" styleClass="label-bright" text="Label" wrapText="true">
+                           <VBox.margin>
+                              <Insets left="20.0" right="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label text="Genre">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="genreSideBar" styleClass="label-bright" text="Label" wrapText="true">
+                           <VBox.margin>
+                              <Insets left="20.0" right="5.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox layoutX="47.0" layoutY="652.0" prefHeight="52.0" prefWidth="324.0" stylesheets="@../Dark.css" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="12.0">
+                     <children>
+                        <Button fx:id="btnMoreInfo" mnemonicParsing="false" onAction="#handleBtnEdit" prefWidth="155.0" text="More Info">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="4.0" right="4.0" top="12.5" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnAddNew" mnemonicParsing="false" onAction="#handleBtnAddNew" prefWidth="155.0" text="Add New Game">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="4.0" right="4.0" top="12.5" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="14.0" layoutY="601.0" prefHeight="52.0" prefWidth="324.0" stylesheets="@../Dark.css" AnchorPane.leftAnchor="12.0">
+                     <children>
+                        <Button fx:id="btnEdit" mnemonicParsing="false" onAction="#handleBtnEdit" prefWidth="155.0" text="Edit">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="4.0" right="4.0" top="12.5" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#handleBtnDelete" prefWidth="155.0" text="Delete">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="4.0" right="4.0" top="12.5" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="developerSideBarPanel" layoutX="12.0" layoutY="184.0" prefHeight="417.0" prefWidth="324.0" styleClass="background" stylesheets="@../Dark.css" visible="false" AnchorPane.leftAnchor="12.0">
+                     <children>
+                        <Label text="Name">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="nameSideBar" styleClass="label-bright" text="Label">
+                           <VBox.margin>
+                              <Insets left="20.0" right="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label text="Founder">
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="founderSideBar" styleClass="label-bright" text="Label">
+                           <VBox.margin>
+                              <Insets left="20.0" right="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </SplitPane>
+   </children>
+</AnchorPane>
